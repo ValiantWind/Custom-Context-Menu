@@ -3,6 +3,7 @@ const scope = document.querySelector("body");
 const reload = document.getElementById("reloadPage");
 const printElement = document.getElementById("print");
 const savePage = document.getElementById("savePage");
+const copyButton = document.getElementById("copyToClipboard");
 
 const normalizePozition = (mouseX, mouseY) => {
         // ? compute what is the mouse position relative to the container element (scope)
@@ -72,4 +73,9 @@ reload.addEventListener("click", (event) => {
 
 printEvent.addEventListener("click", (event) => {
 	print();
+})
+
+// copy to clipboard
+copyButton.addEventListener("click", (event) => {
+  navigator.clipboard.writeText("69420");
 })
