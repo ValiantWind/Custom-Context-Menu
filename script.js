@@ -3,7 +3,7 @@ const scope = document.querySelector("body");
 const reload = document.getElementById("reloadPage");
 const printElement = document.getElementById("print");
 const savePage = document.getElementById("savePage");
-const copyButton = document.getElementById("copyToClipboard");
+const shareButton = document.getElementById("share");
 
 const normalizePozition = (mouseX, mouseY) => {
         // ? compute what is the mouse position relative to the container element (scope)
@@ -71,11 +71,14 @@ reload.addEventListener("click", (event) => {
 	location.reload();
 })
 
-printEvent.addEventListener("click", (event) => {
-	print();
+printElement.addEventListener("click", (event) => {
+	window.print();
 })
 
-// copy to clipboard
-copyButton.addEventListener("click", (event) => {
-  navigator.clipboard.writeText("69420");
+shareButton.addEventListener("click", (event) => {
+	navigator.share({
+		title: document.title,
+    text: "Check out this really cool project that @ValiantWind made!!1!111!!",
+    url: window.location.href
+	})
 })
